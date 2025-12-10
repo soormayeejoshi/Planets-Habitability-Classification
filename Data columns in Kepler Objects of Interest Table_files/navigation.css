@@ -1,0 +1,163 @@
+.exo-hrmenu {
+	width: 100%;
+	margin-top: 0px;
+	background: #00356f;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 16px;
+   text-align: left;
+}
+
+/* general ul style */
+.exo-hrmenu ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+/* first level ul style */
+.exo-hrmenu > ul,
+.exo-hrmenu .exo-hrsub-inner {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 0;
+	background: #00356f;
+}
+
+.exo-hrmenu > ul > li {
+	color: #ffff00;
+	display: inline-block;
+}
+
+.exo-hrmenu > ul > li > a {
+	font-weight: 600;
+	padding: 3px 1.5em;
+	color: #ffffff;
+	display: inline-block;
+}
+
+.exo-hrmenu > ul > li > a:hover {
+	color: #ffff00;
+}
+
+.exo-hrmenu > ul > li.exo-hropen a {
+	color: #ffffff;
+	background: #00356f;
+}
+
+.exo-hrmenu > ul > li.exo-hropen > a:hover {
+	color: #ffff00;
+	background: #00356f;
+}
+
+/* sub-menu */
+.exo-hrmenu .exo-hrsub {
+	display: none;
+	position: absolute;
+	background: #00356f;
+	width: 100%;
+	left: 0;
+   z-index: 9999;
+	border-top: 1px solid #7080a0;
+}
+
+.exo-hropen .exo-hrsub {
+	display: block;
+	padding-bottom: 10px;
+}
+
+.exo-hrmenu .exo-hrsub-inner > div {
+	width: 15%;
+	float: left;
+	padding: 20px 20px 0;
+}
+
+.exo-hrmenu .exo-hrsub-inner:before,
+.exo-hrmenu .exo-hrsub-inner:after {
+	content: " ";
+	display: table;
+}
+
+.exo-hrmenu .exo-hrsub-inner:after {
+	clear: both;
+}
+
+.exo-hrmenu .exo-hrsub-inner > div > ul > li {
+   text-indent: -1em; 
+   margin-left: 1em;
+}
+
+.exo-hrmenu .exo-hrsub-inner > div a {
+	line-height: 2em;
+}
+
+.exo-hrmenu .exo-hrsub-inner > div a:hover {
+	color: #ffff00;
+}
+
+.exo-hrsub h4 {
+	color: #afdefa;
+	padding: 10px 0 0.6em;
+	margin: 0;
+   font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+/* Examples for media queries */
+
+@media screen and (max-width: 65em) { 
+
+	.exo-hrmenu {
+		font-size: 95%;
+	}
+
+}
+
+@media screen and (max-width: 43em) { 
+
+	.exo-hrmenu {
+		font-size: 95%;
+		border: none;
+	}
+
+	.exo-hrmenu > ul,
+	.exo-hrmenu .exo-hrsub-inner {
+		width: 100%;
+		padding: 0;
+	}
+
+	.exo-hrmenu .exo-hrsub-inner {
+		padding: 0 2em;
+		font-size: 75%;
+	}
+
+	.exo-hrmenu > ul > li {
+		display: block;
+		border-bottom: 4px solid #47a3da;
+	}
+
+	.exo-hrmenu > ul > li > a { 
+		display: block;
+		padding: 1em 3em;
+	}
+
+	.exo-hrmenu .exo-hrsub { 
+		position: relative;
+	}
+
+	.exo-hrsub h4 {
+		padding-top: 0.6em;
+	}
+
+}
+
+@media screen and (max-width: 40em) { 
+	.exo-hrmenu .exo-hrsub-inner > div {
+		width: 100%;
+		float: none;
+		padding: 0 2em;
+	}
+}
+
+
+

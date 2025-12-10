@@ -1,0 +1,223 @@
+/* Fixed-width header/footer with dark background, */
+/* white center for content                        */
+body
+{
+    background-color: #000022;
+    font-family: arial, sans-serif;
+    font-size: medium;
+}
+.bbox 
+{
+    width:  800px; 
+    margin: 0 auto;
+    padding: 5px 5px 5px 5px;
+    background-color: #ffffff;
+    border: 0;
+}
+.b2box
+{
+    width:   100%;
+    padding: 0px;
+    margin:  0px;
+    border:  1px solid #000022;
+    background-color: #ffffff;
+}
+
+/* Fixed-width top banner */
+
+#banner
+{
+    width:   100%;
+    height:  68px;
+    margin:  0 auto;
+    border:  0;
+    padding: 0;
+    text-align: left;
+    background: url("/images/nsted_flexbanner.jpg");
+}
+
+/* Box to set off sections (like forms) */
+/* on fixed-width pages (ie, front page */
+.sbox_invisible
+{
+  width: 75%;
+  background-color: inherit;
+  margin: 20px auto;
+  text-align: center;
+}
+.sbox
+{
+    width:  85%;
+    border:  1px solid #000022;
+    background-color: #f0f6ff;
+    margin:  5px auto 5px auto;
+    padding: 5px;
+    text-align: center;
+}
+.sbox p
+{
+  margin-bottom: 30px;
+}
+.sbox .input, .sbox_invisible .input
+{
+  margin-top: 10px;
+  padding-top: 0px;
+}
+.sbox .justify, .sbox_invisible .justify
+{
+  margin: 0 10px;
+  text-align: justify;
+}
+.sbox table, .sbox_invisible table
+{
+  border: 0;
+  text-align: left;
+  background-color: inherit;
+  margin: 10px auto;
+}
+.rbox
+{
+    width:  65%;
+    border:  1px solid #aaaaaa;
+    background-color: #e0e6ee;
+    margin:  0px auto 20px auto;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Submission "buttons" for front page */
+p.bluebutton
+{
+  width: 60%;
+  margin: 10px auto;
+  padding: 4px;
+  color: #ffffff;
+  font-size: 90%;
+  background-color: #00356F;
+  border-top: 2px solid #6081a5;
+  border-left: 2px solid #6081a5;
+  border-right: 2px solid #001b39;
+  border-bottom: 2px solid #001b39;
+  vertical-align: middle;
+}
+p.bluebutton a,
+p.bluebutton a:hover,
+p.bluebutton a:focus,
+p.bluebutton a:visited
+{
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  color: #ffffff;
+  width: 100%;
+}
+
+button.bluebutton
+{
+  padding: 1px;
+  margin: 0px 0px 5px 0px;
+  width: 40%;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 90%;
+  background-color: #00356F;
+  border-top: 2px solid #6081a5;
+  border-left: 2px solid #6081a5;
+  border-right: 2px solid #001b39;
+  border-bottom: 2px solid #001b39;
+  vertical-align: middle;
+  text-decoration: none;
+  /*text-color: #f0f0f0;*/
+}
+
+button.bluebutton1
+{
+  width: 62%;
+  margin: 10px auto;
+  padding: 4px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 90%;
+  background-color: #00356F;
+  border-top: 2px solid #6081a5;
+  border-left: 2px solid #6081a5;
+  border-right: 2px solid #001b39;
+  border-bottom: 2px solid #001b39;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+button.bluebutton2
+{
+  padding: 4px;
+  color: #00356F;
+  font-weight: bold;
+  font-size: 90%;
+  background-color: #D0D0D0;
+  border-top: 2px solid #6081a5;
+  border-left: 2px solid #6081a5;
+  border-right: 2px solid #001b39;
+  border-bottom: 2px solid #001b39;
+  vertical-align: middle;
+  text-decoration: none;
+  /*text-color: none; */
+}
+
+.bluebuttonsmall
+{
+  padding: 1px;
+  color: #ffffff;
+  width: 22%;
+  font-weight: bold;
+  font-size: 90%;
+  background-color: #00356F;
+  border-top: 2px solid #6081a5;
+  border-left: 2px solid #6081a5;
+  border-right: 2px solid #001b39;
+  border-bottom: 2px solid #001b39;
+  vertical-align: middle;
+  text-decoration: none;
+}
+.bluebuttonsmall a,
+.bluebuttonsmall a:hover,
+.bluebuttonsmall a:focus,
+.bluebuttonsmall a:visited
+{
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  color: #ffffff;
+  width: 100%;
+}
+
+
+/* Static pages with webpage div, ie front page */
+.webpage
+{
+  background-color: inherit;
+  margin: 0;
+  padding: 5px;
+}
+.webpage h1
+{
+  text-align: center; 
+  font-size: 140%;
+  margin-bottom: 5px;
+}
+
+.webpage h2
+{
+  font-size: 120%;
+  font-style: italic;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+/* Input box example on front page */
+.webpage .example 
+{
+  margin: 0;
+  display: block;
+  font-size: 80%
+}

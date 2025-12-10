@@ -1,0 +1,270 @@
+/* Styling for documentation pages, included in  */
+/* header_NStED_docs.html, along with fixed.css  */
+/* and style.css                                 */
+
+.docs
+{
+  font-size: small;
+  padding: 5px;
+  margin: 5px;
+  border: 0px solid #000;
+}
+ 
+.docs h1 
+{
+  text-align: left;
+  width: 100%;
+  font-size: 130%;
+  margin: 0 5px 0 0;
+  padding: 5px 3px 5px 0;
+  border-bottom: 3px solid #0000cc;
+}
+
+.docs h2
+{
+  text-align: left;
+  padding: 0;
+  margin: 20px 0 3px 0;
+  font-size: 110%;
+  font-weight: bold;
+}
+
+.docs h3
+{
+  text-align: left;
+  padding: 0;
+  margin: 10px 0 5px 0;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+.docs ul { 
+ margin: 0 0 0 20px;
+ padding: 0px 0px 5px 5px;
+ text-align: left;
+ margin-left: 1em;
+ overflow: hidden; 
+}
+
+.docs ol li {
+	margin-bottom: 3px; 
+    position: relative;
+    left: 1em;
+    padding-right: 1em;   
+}
+
+.docs ol { 
+ margin: 0 0 0 20px;
+ padding: 0px 0px 5px 5px;
+ text-align: left;
+ margin-left: 1em;
+ overflow: visible; 
+}
+
+.docs dl { width: 80%; margin-left: 5%; }
+.docs dt { font-weight: bold; }
+
+.docs .spaced_list li {margin-bottom:10px; }
+
+.docs .toc {
+	float: left;
+	border: thin solid #666; 
+	margin: 10px; 
+	padding: 0 10px; 
+	text-align:left;
+}
+
+
+.docs .toc-right {
+	float: right;
+	border: thin solid #666; 
+	margin: 10px; 
+	padding: 0 10px; 
+	text-align:left;
+}
+
+
+.docs p {
+    text-align: justify;
+}
+
+.docs table
+{
+  margin: 10px auto 2px auto;
+  border: 0px solid #000000;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.docs .half_table {
+  width: 350px;
+}
+
+.docs .half_table th,
+.docs .half_table td {
+   text-align:center;
+   vertical-align: middle; 
+}
+
+
+.docs table.text_gray 
+{
+	color: #CCC
+}
+
+
+.docs ul {
+    list-style: outside disc;
+    margin-left: 1em;
+}
+
+.docs ul li {
+    position: relative;
+    left: 1em;
+    padding-right: 1em;    
+}
+
+.docs caption
+{
+  margin: 10px auto 0px auto;
+  font-weight: bold;
+  text-align: center;
+  padding: 4px 4px 2px 4px;
+}
+
+.docs th
+{
+  background-color: #b0c4de;
+  text-align: center;
+  vertical-align: center;
+  padding: 2px;
+  margin: 0;
+  border: 1px solid #000000;
+}
+
+.docs .doc_index th
+{
+  text-align:center;
+}
+
+.docs .doc_index td
+{
+  padding: 5px;
+}
+
+.docs tr
+{
+  padding: 0;
+  margin: 0;
+}
+
+
+
+/* A table cell of class "inline_caption" mocks */
+/* a new caption, but without starting a new    */
+/* table, to force all tables to have cells of  */
+/* equal widths that line up nicely.            */
+.docs .inline_caption
+{
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+  padding-top: 15px;
+  font-size: 110%;
+  border: 0;
+}
+.docs td
+{
+  background-color: #e2eeff;
+  text-align: left;
+  vertical-align: top;
+  padding: 2px;
+  border: 1px solid #000000;
+  margin: 0;
+}
+
+.docs .centered 
+{
+  text-align: center
+}
+
+/* Give formulas some indentation */
+.docs .formula { margin-left: 140px; }
+
+/* Abbreviations in a different color */
+.docs .abb { color: red; background-color: inherit; }
+
+/* Images with captions: use im_cap div with img then p */
+.docs .im_cap
+{
+  text-align: center;
+}
+.docs .im_cap img
+{
+  border: 1px solid #000000;
+}
+.docs .im_cap p
+{
+  text-align: center;
+  width: 90%;
+  font-style: italic;
+  font-size: 90%;
+}
+
+.docs .im_inline_right
+{
+  float: right;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  border: 0;
+}
+
+/* Close button on popups */
+.close
+{
+    text-align: center;
+    margin-top: 2em;
+}
+
+.docs .page_controls {
+    line-height: 25px;
+}
+
+.docs .page_controls a {
+  font-style: italic;
+  text-decoration: none;
+  background-color: #ddd;
+  display: inline-block;
+  padding: 0px 10px 4px;
+  border-radius: 3px;
+  color: #444;
+  border:thin solid #aaa;
+}
+
+.docs .page_controls a:hover {
+  color: #000;
+  background-color: #ccc;
+}
+
+.docs .page_controls strong {
+  font-style: normal;
+}
+
+.docs .page_controls strong i {
+  font-style: normal;
+  font-size: 25px;
+  position: relative;
+  top: 2px;
+}
+
+.docs .page_controls .prev_button strong {
+  padding-right: 10px;
+}
+
+.docs .page_controls .next_button {
+  float: right; 
+}
+
+.docs .page_controls .next_button strong {
+  padding-left: 10px;
+}

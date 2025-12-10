@@ -1,0 +1,135 @@
+var mainMenu;
+
+var logoutCallback = null;
+
+
+jQuery(document).ready(function()
+{
+   mainMenu = new exoHorizontalMenu();
+
+   mainMenu.init();
+
+   jQuery.get("/cgi-bin/Login/nph-login?action=user", function(data){
+
+      if(data.substr(0,6) == "ERROR:") 
+      {
+         jQuery("#loginID").html("Login");
+
+         jQuery("#loginID").attr("title", "");
+
+         jQuery("#loginID").click(function(){
+            window.location.href = "/applications/Login";
+         });
+      }
+      else
+      {
+         var userName = data.trim();
+
+         jQuery("#loginID").attr("title", userName);
+
+         if(userName.length > 20)
+            userName = userName.substring(0, 20);
+
+         var atIndex = userName.indexOf("@");
+
+         if(atIndex > 0)
+            userName = userName.substring(0, atIndex);
+
+         userName = userName + " (Log out)";
+
+         jQuery("#loginID").html(userName);
+
+         jQuery("#loginID").click(function(){
+            logOut();
+         });
+      }
+
+      console.log("Login initialized.");
+   });
+});
+
+
+function exoHorizontalMenu() 
+{
+   var me = this;
+
+   me.timer = 0;
+
+	me.body        = jQuery( 'body' );
+	me.pulldownBox = jQuery( '.exo-hrmenu' );
+	me.listItems   = jQuery( '#exo-hrmenu > ul > li' );
+
+	me.menuItems = me.listItems.children( 'a' );
+
+	var current = -1;
+
+
+	me.init = function() 
+   {
+		me.menuItems.on( 'mouseover', me.enter );
+		me.listItems.on( 'mouseover', function( event ) { event.stopPropagation(); } );
+
+		me.pulldownBox.on( 'mouseleave', me.close );
+	}
+
+
+   me.enter = function( event )
+   {
+      clearTimeout(me.timer);
+
+      me.timer = setTimeout(function() {me.open(event); clearTimeout(me.timer);}, 500);
+   }
+
+
+	me.open = function( event ) 
+   {
+		var item = jQuery( event.currentTarget ).parent( 'li' );
+
+	   var idx = item.index();
+
+		if( current === idx ) 
+      {
+         // For now, we do nothing in this case
+		}
+		else 
+      {
+			me.listItems.eq( current ).removeClass( 'exo-hropen' );
+
+			item.addClass( 'exo-hropen' );
+
+			current = idx;
+
+			me.body.off( 'click' ).on( 'click', me.close );
+		}
+
+		return false;
+	}
+
+
+	me.close = function( event ) 
+   {
+      clearTimeout(me.timer);
+
+		me.listItems.eq( current ).removeClass( 'exo-hropen' );
+
+		current = -1;
+	}
+}
+
+
+function logOut()
+{
+   jQuery.get("/cgi-bin/Login/nph-login?action=logout", function(data){
+
+         jQuery("#loginID").html("Login");
+
+         jQuery("#loginID").attr("title", "");
+
+         jQuery("#loginID").click(function(){
+            window.location.href = "/applications/Login";
+         });
+
+         if(logoutCallback)
+            logoutCallback();
+   });
+}
