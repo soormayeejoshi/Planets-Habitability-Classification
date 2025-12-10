@@ -10,27 +10,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import math 
 
-
-# In[2]:
-
-
 planets= pd.read_csv("D:\Downloads\exoplanets\cumulative.csv")
-
-
-# In[3]:
-
 
 planets.head()
 
-
-# In[4]:
-
-
 print(planets.shape)
-
-
-# In[5]:
-
 
 confirmed=[]
 
@@ -42,134 +26,52 @@ for i in range(planets.shape[0]):
 print(confirmed[:10])
 
 
-
-
-
-    
-
-
-# In[6]:
-
-
 planets.drop(columns='koi_disposition')
-
-
-# In[ ]:
-
-
-
-
-
-# In[7]:
-
 
 planets.drop(columns=['koi_pdisposition','koi_disposition'], inplace=True)
 
-
-# In[8]:
-
-
 planets['confirmed']=confirmed
 
-
-# In[9]:
-
-
 planets.head()
-
-
-# In[10]:
-
 
 plt.figure(figsize=(50,50))
 sns.heatmap(corr, cmap='mako_r',annot=True)
 plt.show()
 
-
-# In[12]:
-
-
 print(planets.isnull().mean() * 100)
-
-
-# In[13]:
-
 
 planets.drop(columns=['koi_teq_err1','koi_teq_err2'], inplace=True)
 
-
-# In[14]:
-
-
 print(planets.median(skipna=True, numeric_only=True))
-
-
-# In[15]:
 
 
 planets.fillna(planets.median(numeric_only = True))
 
 
-# In[16]:
-
-
 print(planets.isnull().mean() * 100)
-
-
-# In[17]:
 
 
 planets.fillna(planets.median(numeric_only = True), inplace=True)
 
 
-# In[18]:
-
-
 print(planets.isnull().mean() * 100)
-
-
-# In[19]:
 
 
 planets.koi_teq.hist(bins=50, figsize=(20,16),range=(273,373))
 plt.show()
 
-
-# In[20]:
-
-
 print(planets.query("koi_teq<=373 and koi_teq>=273"))
-
-
-# In[21]:
 
 
 print(planets.koi_prad.mean())
 
 
-# In[22]:
-
-
 X_train["koi_slogg"].hist(bins=50, figsize=(50,30))
 plt.show()
-
-
-# In[23]:
-
 
 planets["koi_slogg"].hist(bins=50, figsize=(50,30))
 plt.show()
 
-
-# In[ ]:
-
-
-
-
-
-# SPLITTING
-
-# In[24]:
 
 
 import sklearn 
@@ -205,14 +107,14 @@ planets = planets[~planets["strata"].isin(rare_strata)].copy()
 X = ["koi_prad", "koi_steff", "koi_slogg", "koi_srad","koi_teq", "koi_insol", "rocky", "habitable"]
 y = planets["confirmed"]
 
-# --- Step 6: Stratified splitting ---
+
 splitter = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
 
 for train_index, test_index in splitter.split(planets, planets["strata"]):
     strat_train_set_n = planets.iloc[train_index]
     strat_test_set_n = planets.iloc[test_index]
 
-# --- Step 7 (optional): Verify stratification ---
+
 def strata_proportions(df):
     return df["strata"].value_counts(normalize=True)
 
@@ -288,43 +190,22 @@ planets_scaled[cols_to_scale] = (X_test[cols_to_scale] - means) / stds
 X_test = planets_scaled.copy()
 
 
-
-# In[28]:
-
-
 X_train.drop(columns='box', inplace =True)
 X_train.drop(columns='scale', inplace=True)
 
 
-# In[ ]:
-
-
-
-
-
-# In[29]:
-
-
 print(X_train)
 
-
-# In[30]:
 
 
 slogg_mean = np.mean(X_train['koi_slogg'])
 teq_mean = np.mean(X_train['koi_teq'])
 
 
-# In[31]:
-
 
 X_train.hist(figsize=(20,16), bins=50)
 print(X_train.shape)
 
-
-# ______________________MODEL TRAINING_________________
-
-# In[68]:
 
 
 def sigmoid(z):
@@ -353,20 +234,12 @@ def compute_cost(X, y, w, b, *argv):
     
 
 
-# In[ ]:
-
-
-
-
-
-# In[70]:
 
 
 m,n=X_train.shape
 print(m,n)
 
 
-# In[71]:
 
 
 def compute_gradient(X, y, w, b, *argv): 
@@ -574,13 +447,6 @@ def compute_accuracy(y_true, y_pred):
     return correct / len(y_true)
 
 
-# In[ ]:
-
-
-
-
-
-# In[218]:
 
 
 w = [-0.000452, -0.272556, 0.187035, -0.024772, -0.080476, -0.002733, -0.242671, 0.836049]
@@ -590,10 +456,8 @@ acc = compute_accuracy(y_test, y_pred)
 print(f"Model Accuracy: {acc*100:.2f}%")
 
 
-# In[219]:
 
 
-import numpy as np
 
 def precision_recall_f1(y_true, y_pred):
     """
@@ -645,7 +509,7 @@ print(f"F1 Score: {f1*100:.2f}%")
 # In[223]:
 
 
-import numpy as np
+
 
 def precision_recall_f1(y_true, y_pred):
     y_true = np.asarray(y_true).astype(int)
@@ -672,16 +536,6 @@ print(f"Best threshold = {best['thr']:.2f} | "
       f"Precision: {best['prec']*100:.2f}%  "
       f"Recall: {best['rec']*100:.2f}%  "
       f"F1: {best['f1']*100:.2f}%")
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
 
 
 
