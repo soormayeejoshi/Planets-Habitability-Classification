@@ -1,18 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-"""
-Exoplanet Confirmation Classifier
-----------------------------------
-Logistic Regression (from scratch) on the NASA Kepler KOI dataset.
-Fixes:
-  - Defined correlation matrix before heatmap
-  - No data leakage: test set scaled with training stats
-  - Removed references to non-existent columns ('box', 'scale')
-  - Vectorised predict (no slow Python loop)
-  - Trained w, b used consistently (no hardcoded weights)
-  - Threshold sweep moved to a clean evaluation block
-  - All duplicate code removed
-"""
+
 
 import math
 import numpy as np
